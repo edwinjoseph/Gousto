@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { CookiesProvider } from 'react-cookie';
 import * as ReactDOM from 'react-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import App from './App';
@@ -11,7 +12,9 @@ gousto.setBaseUrl(process.env.REACT_APP_GOUSTO_API!);
 
 ReactDOM.render(
   <ReduxProvider store={store()}>
-    <App />
+    <CookiesProvider>
+      <App />
+    </CookiesProvider>
   </ReduxProvider>,
   document.getElementById('root') as HTMLElement
 );

@@ -11,6 +11,7 @@ export function fetchCategories(dispatch: any) {
     try {
       const categories = await getCategoriesFacade();
       dispatch(getCategoriesSuccess(categories.body.data));
+      return categories.body.data;
     } catch (error) {
       dispatch(getCategoriesFailure());
       throw error;

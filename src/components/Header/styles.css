@@ -1,17 +1,55 @@
 .header {
-    background-color: #222;
-    height: 150px;
     padding: 20px;
-    color: white;
 }
 
-.logo {
-    animation: logo-spin infinite 20s linear;
-    height: 80px;
+.header .fluid {
+    align-items: center;
 }
 
 .title {
-    font-size: 1.5em;
+    margin: 0;
+    font-size: 1.3em;
+    min-width: 286px;
+}
+
+.navigation {
+    width: calc(100% - 286px);
+    margin: 0 10px;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.navigation .line-item {
+    display: inline-block;
+    margin: 5px 0 0;
+    padding: 0 0 8px 0;
+}
+
+.navigation a {
+    padding: 0 10px;
+}
+.navigation a,
+.navigation a:hover,
+.navigation a:active,
+.navigation a:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.navigation .line-item.active {
+    border-bottom: 2px solid #f6323e;
+}
+
+.navigation .line-item.active a,
+.navigation .line-item.active a:hover,
+.navigation .line-item.active a:active,
+.navigation .line-item.active a:focus {
+    color: #f6323e;
 }
 
 @keyframes logo-spin {

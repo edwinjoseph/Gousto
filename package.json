@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/classnames": "^2.2.7",
+    "classnames": "^2.2.6",
     "cross-fetch": "^3.0.1",
     "lodash": "^4.17.11",
     "react": "^16.8.2",
+    "react-cookie": "^3.0.8",
     "react-dom": "^16.8.2",
     "react-redux": "^6.0.0",
     "react-scripts-ts": "3.1.0",
+    "recompose": "^0.30.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
@@ -25,6 +29,7 @@
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.1",
     "@types/react-redux": "^7.0.1",
+    "@types/recompose": "^0.30.4",
     "@types/redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.8",
     "typescript": "^3.3.3"
