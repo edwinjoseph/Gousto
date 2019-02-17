@@ -1,15 +1,17 @@
 .header {
-    padding: 20px;
+    padding: 20px 0;
+    background-color: #FFF;
 }
 
 .header .fluid {
     align-items: center;
 }
 
-.title {
+.header .title {
     margin: 0;
     font-size: 1.3em;
     min-width: 286px;
+    cursor: pointer;
 }
 
 .navigation {
@@ -22,37 +24,4 @@
 }
 .navigation::-webkit-scrollbar {
     display: none;
-}
-
-.navigation .line-item {
-    display: inline-block;
-    margin: 5px 0 0;
-    padding: 0 0 8px 0;
-}
-
-.navigation a {
-    padding: 0 10px;
-}
-.navigation a,
-.navigation a:hover,
-.navigation a:active,
-.navigation a:focus {
-    color: #000;
-    text-decoration: none;
-}
-
-.navigation .line-item.active {
-    border-bottom: 2px solid #f6323e;
-}
-
-.navigation .line-item.active a,
-.navigation .line-item.active a:hover,
-.navigation .line-item.active a:active,
-.navigation .line-item.active a:focus {
-    color: #f6323e;
-}
-
-@keyframes logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
 }

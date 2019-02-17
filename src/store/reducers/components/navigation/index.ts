@@ -1,16 +1,16 @@
-import { EnumNavigationType, INavigationAction, INavigationState } from './types';
+import { EnumCategoriesType, ICategoriesAction, ICategoriesState } from './types';
 
 export default function (
-  state: INavigationState = { isLoading: true, data: []},
-  action: INavigationAction): INavigationState {
+  state: ICategoriesState = { isLoading: true, data: []},
+  action: ICategoriesAction): ICategoriesState {
   switch (action.type) {
-    case EnumNavigationType.GET_CATEGORIES_PENDING: {
+    case EnumCategoriesType.GET_CATEGORIES_PENDING: {
       return action.payload;
     }
-    case EnumNavigationType.GET_CATEGORIES_SUCCESS: {
+    case EnumCategoriesType.GET_CATEGORIES_SUCCESS: {
       return action.payload;
     }
-    case EnumNavigationType.GET_CATEGORIES_FAILURE: {
+    case EnumCategoriesType.GET_CATEGORIES_FAILURE: {
       return action.payload;
     }
     default:

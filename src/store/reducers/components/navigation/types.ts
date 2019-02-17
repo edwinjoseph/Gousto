@@ -1,18 +1,18 @@
 import { ICategory } from '../../../../facades/gousto/types';
 
-export enum EnumNavigationType {
-  GET_CATEGORIES_FAILURE,
-  GET_CATEGORIES_PENDING,
-  GET_CATEGORIES_SUCCESS,
+export enum EnumCategoriesType {
+  GET_CATEGORIES_FAILURE = 'GET_CATEGORIES_FAILURE',
+  GET_CATEGORIES_PENDING = 'GET_CATEGORIES_PENDING',
+  GET_CATEGORIES_SUCCESS = 'GET_CATEGORIES_SUCCESS',
 }
 
-export interface INavigationState {
+export interface ICategoriesState {
   isLoading: boolean;
   status?: 'ok' | 'failed';
   data: ICategory[];
 }
 
-export interface INavigationAction {
-  type: EnumNavigationType;
-  payload: INavigationState;
+export interface ICategoriesAction {
+  type: EnumCategoriesType;
+  payload: ICategoriesState;
 }

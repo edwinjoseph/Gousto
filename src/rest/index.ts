@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch';
+import qs from 'qs';
 
 function responseHandler(response: Response, body: any): any {
   if (!response.ok) {
@@ -24,6 +25,13 @@ function send<T>(url: string, method: string): Promise<T> {
   });
 }
 
-export function get<T>(url: string): Promise<T> {
+export function get<T>(url: string, queryParams?: any): Promise<T> {
+  if (queryParams) {
+    url += qs.stringify(queryParams, {
+      addQueryPrefix: true,
+      arrayFormat: 'brackets',
+      skipNulls: true,
+    })
+  }
   return send(url, 'GET');
 }

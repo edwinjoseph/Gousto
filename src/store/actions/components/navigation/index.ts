@@ -1,34 +1,34 @@
 import { ICategory } from '../../../../facades/gousto/types';
-import {EnumNavigationType, INavigationAction} from '../../../reducers/components/navigation/types';
+import { EnumCategoriesType, ICategoriesAction } from '../../../reducers/components/navigation/types';
 
-export function getCategoriesPending(): INavigationAction {
+export function getCategoriesPending(): ICategoriesAction {
   return {
     payload: {
       data: [],
       isLoading: true,
     },
-    type: EnumNavigationType.GET_CATEGORIES_PENDING,
+    type: EnumCategoriesType.GET_CATEGORIES_PENDING,
   }
 }
 
-export function getCategoriesSuccess(data: ICategory[]): INavigationAction {
+export function getCategoriesSuccess(data: ICategory[]): ICategoriesAction {
   return {
     payload: {
       data,
       isLoading: false,
       status: 'ok',
     },
-    type: EnumNavigationType.GET_CATEGORIES_SUCCESS,
+    type: EnumCategoriesType.GET_CATEGORIES_SUCCESS,
   }
 }
 
-export function getCategoriesFailure(): INavigationAction {
+export function getCategoriesFailure(): ICategoriesAction {
   return {
     payload: {
       data: [],
       isLoading: false,
       status: 'failed',
     },
-    type: EnumNavigationType.GET_CATEGORIES_FAILURE,
+    type: EnumCategoriesType.GET_CATEGORIES_FAILURE,
   }
 }

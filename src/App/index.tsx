@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import './styles.css';
 
+import CategoryPage from '../components/CategoryPage';
 import Header from '../components/Header';
-import { ICategory } from '../facades/gousto/types';
+import { fetchProducts } from '../store/thunks/components/categoryPage';
 import { fetchCategories } from '../store/thunks/components/navigation';
 
 class App extends React.Component<any, any> {
@@ -20,10 +21,13 @@ class App extends React.Component<any, any> {
     const props = this.props;
     const { cookies } = props;
 
-    props.initializeCategories()
-      .then((categories: ICategory[]) => {
+    Promise.all([
+      props.initializeCategories(),
+      props.initializeProducts(),
+    ])
+      .then(([ categories ]) => {
         this.setState({
-          activeCategory: cookies.get('activeCategory') || categories[0].id,
+          activeCategory: cookies.get('activeCategory'),
           hasErrored: false,
           isLoading: false,
         })
@@ -65,9 +69,7 @@ class App extends React.Component<any, any> {
     return (
       <div className="app">
         <Header activeCategory={this.state.activeCategory} updateCategory={this.updateCategory} />
-        <p className="intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <CategoryPage activeCategory={this.state.activeCategory} />
       </div>
     );
   }
@@ -79,7 +81,8 @@ export default compose(
   connect(
     null,
     (dispatch: any) => ({
-      initializeCategories: fetchCategories(dispatch)
+      initializeCategories: fetchCategories(dispatch),
+      initializeProducts: fetchProducts(dispatch),
     })
   ),
   withCookies

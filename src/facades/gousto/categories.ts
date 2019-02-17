@@ -1,7 +1,7 @@
 import baseUrl from '.'
 import { get } from '../../rest';
-import { ICategoriesResponse } from './types';
+import { ICategory, IGoustoResponse } from './types';
 
 export async function getCategories() {
-  return get<ICategoriesResponse>(`${baseUrl()}/categories`);
+  return get<IGoustoResponse<ICategory[]>>(`${baseUrl()}/categories`);
 }
