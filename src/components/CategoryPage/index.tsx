@@ -77,7 +77,8 @@ export default compose<any, any>(
         updateItems(categoryItems);
       }
       updateItems(categoryItems.filter((product: IProduct) =>
-        product.title.toLowerCase().includes(searchValue.toLowerCase()))
+        product.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchValue.toLowerCase()))
       )
     }
   }),
