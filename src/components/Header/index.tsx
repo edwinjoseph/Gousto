@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import compose from 'recompose/compose';
 import mapProps from 'recompose/mapProps';
 import { ICategory } from '../../facades/gousto/types';
@@ -12,10 +13,12 @@ function header(props: any): JSX.Element {
   return (
     <header className="header">
       <div className="container fluid">
-        <h1 className="title" onClick={props.updateCategory('')}>Gousto | Store Cupboard</h1>
+        <Link to="/" className="header-link">
+          <h1 className="header-title">Gousto | Store Cupboard</h1>
+        </Link>
         <nav className="navigation">
           {props.items.map((item: ICategory): JSX.Element => (
-            <LineItem key={item.id} activeCategory={props.activeCategory} updateCategory={props.updateCategory} {...item} />
+            <LineItem key={item.id} activeCategory={props.activeCategory} {...item} />
           ))}
         </nav>
       </div>
@@ -39,6 +42,5 @@ export default compose<IHeaderProps, any>(
       }
       return result;
     }, []),
-    updateCategory: props.updateCategory,
   }))
 )(header);

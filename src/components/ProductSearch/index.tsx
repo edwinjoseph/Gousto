@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './styles.css';
 
 function ProductSearch(props: any) {
   return (

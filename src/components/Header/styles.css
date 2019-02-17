@@ -7,7 +7,15 @@
     align-items: center;
 }
 
-.header .title {
+.header-link,
+.header-link:hover,
+.header-link:focus,
+.header-link:active {
+    color: #000000;
+    text-decoration: none;
+}
+
+.header-title {
     margin: 0;
     font-size: 1.3em;
     min-width: 286px;

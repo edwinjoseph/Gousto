@@ -1,6 +1,8 @@
 import cx from 'classnames';
+import kebabCase from 'lodash/kebabCase';
 import * as React from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import when from "recompose/branch";
 import compose from "recompose/compose";
 import renderNothing from "recompose/renderNothing";
@@ -13,12 +15,11 @@ function LineItem(props: any): JSX.Element {
       className={cx('line-item', {
         'active': props.activeCategory === props.id
       })}
-      onClick={props.updateCategory(props.id)}
     >
-      <a href="#">
+      <Link to={`/${kebabCase(props.title)}`}>
         {props.title}
         <span className="count">{props.products.length}</span>
-      </a>
+      </Link>
     </span>
   )
 }
