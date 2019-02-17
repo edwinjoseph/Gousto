@@ -9,7 +9,7 @@ import LineItem from './LineItem';
 import './styles.css';
 import { IHeaderProps } from './types';
 
-function header(props: any): JSX.Element {
+export function Header(props: any): JSX.Element {
   return (
     <header className="header">
       <div className="container fluid">
@@ -43,4 +43,4 @@ export default compose<IHeaderProps, any>(
       return result;
     }, []),
   }))
-)(header);
+)(Header);

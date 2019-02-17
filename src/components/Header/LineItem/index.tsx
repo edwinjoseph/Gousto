@@ -9,7 +9,7 @@ import renderNothing from "recompose/renderNothing";
 import { getProducts } from '../../../store/selectors/components/categoryPage';
 import './styles.css'
 
-function LineItem(props: any): JSX.Element {
+export function LineItem(props: any): JSX.Element {
   return (
     <span
       className={cx('line-item', {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import StackGrid from "react-stack-grid";
-import {IProduct} from '../../facades/gousto/types';
+import { IProduct } from '../../facades/gousto/types';
 import ProductItem from './ProductItem';
 import './styles.css';
 

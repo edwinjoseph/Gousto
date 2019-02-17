@@ -5,10 +5,10 @@ module.exports = {
   ],
   setupFiles: [
     '<rootDir>/config/polyfills.js',
+    '<rootDir>/config/setupTests.js',
   ],
   testMatch: [
-    '<rootDir>/src/**/__tests__/**/*.(j|t)s?(x)',
-    '<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)'
+    '<rootDir>/tests/**/?(*.)(spec|test).(j|t)s?(x)'
   ],
   testEnvironment: 'node',
   transform: {

@@ -12,7 +12,7 @@ import { getCategories } from '../store/selectors/components/navigation';
 import { fetchProducts } from '../store/thunks/components/categoryPage';
 import { fetchCategories } from '../store/thunks/components/navigation';
 
-class App extends React.Component<any, any> {
+export class App extends React.Component<any, any> {
   public state = {
     activeCategory: null,
     hasErrored: false,
@@ -21,7 +21,6 @@ class App extends React.Component<any, any> {
 
   public componentDidMount(): void {
     const props = this.props;
-    console.log(props); // tslint:disable-line
 
     Promise.all([
       props.initializeCategories(),

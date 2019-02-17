@@ -13,7 +13,7 @@ import ProductList from '../ProductList';
 import ProductSearch from '../ProductSearch';
 import './styles.css';
 
-class CategoryPage extends React.Component<any, any> {
+export class CategoryPage extends React.Component<any, any> {
   public grid: any = null;
   public state = {
     activeProduct: '',
