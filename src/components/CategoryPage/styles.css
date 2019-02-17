@@ -1,7 +1,31 @@
+.category-header {
+    display: flex;
+    align-items: center;
+}
+
+.category-title {
+    width: 300px;
+}
+
+.category-search {
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    width: calc(100% - 300px);
+}
+.category-search input {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+}
+
 .categories {
     display: flex;
     flex-wrap: wrap;
 }
+
 .category {
     background-color: #FFF;
     display: flex;
